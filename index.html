@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en" ng-app="mudApp">
+
+<head>
+	<meta charset="utf-8">
+	<title>...</title>
+	
+	<!-- css -->
+	<link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+	<link href='css/main.css' rel='stylesheet' type='text/css'>	
+		
+	<!-- libraries -->
+	<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+	<script src="https://code.angularjs.org/1.5.0/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.5.0/angular-route.js"></script>
+	<script src="https://code.angularjs.org/1.5.0/angular-resource.js"></script>
+	<script src="https://code.angularjs.org/1.5.0/angular-mocks.js"></script>
+
+	<!-- angularjs -->
+	<script src="js/mudApp.js"></script>
+	<script src="js/mudController.js"></script>
+	<script src="js/mudDirectives.js"></script>
+	<script src="js/mudServices.js"></script>
+</head>
+
+
+<body ng-controller="mudController">
+
+
+
+	<attendance></attendance>		
+
+
+
+
+	<!-- 
+	<table width="100%" style="background-color: #988ec2;">
+		<tr><td align="center"><div style="height: 5px;"></div></td></tr>
+	</table>	
+
+	<table align="center" width="900">
+
+		<tr><td align="center"><div style="height: 5px;"></div></td></tr>
+
+		<tr>
+			<td align="center">
+				<h1>[{{play_date}}] - Attendance</h1>
+				
+				<table align="center" border="1" bordercolor="#988ec2" style="border-color: #988ec2; background-color: #F8F8FF; border-collapse: collapse;" cellpadding="15">
+					<tr valign="top">
+						<td style="padding-bottom: 25px;">
+							<table align="center" cellpadding="3" width="250">
+								<tr><td align="center" colspan="3"><strong>Players</strong></td></tr>
+								<tr ng-repeat="player in players | filter : {'attending' : 'unknown'} | orderBy: 'name'">
+									<td align="center">{{player.name}}</td>
+									<td align="center"><input type="radio" ng-model="player.attending" value="Yes" ng-change="writeAttendance(player)">Yes</td>
+									<td align="center"><input type="radio" ng-model="player.attending" value="No" ng-change="writeAttendance(player)">No</td>
+								</tr>
+							</table>
+						</td>
+
+						<td style="padding-bottom: 25px;">
+							<table align="center" cellpadding="3" width="250">
+								<tr><td align="center" colspan="3"><strong>In</strong></td></tr>
+								<tr ng-repeat="player in players | filter : {'attending' : 'Yes'} | orderBy: 'name'">
+									<td align="center">{{player.name}}</td>
+									<td align="center"><a ng-click="removeAttendance(player)">[remove]</a></td>								
+								</tr>								
+							</table>
+						</td>
+
+						<td style="padding-bottom: 25px;">
+							<table align="center" cellpadding="3" width="250">
+								<tr><td align="center" colspan="3"><strong>Out</strong></td></tr>
+								<tr ng-repeat="player in players | filter : {'attending' : 'No' } : true | orderBy: 'name'">
+									<td align="center">{{player.name}}</td>
+									<td align="center"><a ng-click="removeAttendance(player)">[remove]</a></td>								
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr><td align="center"><div style="width: 700px; border: 1px solid #988ec2; border-width: 1px 0px 0px 0px; margin-top: 35px; margin-bottom: 20px;"></div></td></tr>
+
+		<tr>
+			<td align="center">				
+				<h1>Teams</h1>
+				
+				<div ng-show="teams_set == 'no'">Teams have not been set yet</div>
+				
+				<table align="center" cellpadding="3" ng-show="teams_set == 'yes'">
+					<tr valign="middle">						
+						<td align="center" ng-repeat="team in teams">						
+							<div style="font-weight: bold; font-size: 13pt;">Team {{team.number}}</div>
+							<div style="padding: 10px; background-color: #F8F8FF; padding: 5px; border: 1px solid #988ec2; width: 200px;">
+								<div ng-repeat="player in players | filter : {'team' : team.number } | orderBy: 'name'">
+									<div style="padding: 3px;">{{player.name}}</div>
+								</div>
+							</div>						
+						</td>					
+							
+						</bleh>
+					</tr>
+				</table>
+				
+
+				<div ng-repeat="player in reservedPlayers = (players | filter : {'team' : '0', 'attending' : 'Yes'} | orderBy: 'name')">	</div>		
+				
+				<div ng-show="reservedPlayers.length > 0" style="margin-top: 25px; padding: 10px; border: 1px solid #988ec2; width: 200px; background-color: #F8F8FF;">
+					<div style="font-weight: bold;">Reserves</div>
+					<div style="clear: both;" ng-repeat="player in reservedPlayers">			
+						<div style="padding: 3px;">{{player.name}}</div>
+				    </div>							
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<table width="100%" style="background-color: #988ec2; margin-top: 40px;">
+		<tr><td align="center"><img src="images/duy-logo.png"></td></tr>
+	</table>	
+
+
+
+	-->
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
